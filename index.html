@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DODO — Launch SaaS Alternatives in 24 Hours</title>
+  <title>DODO — Build & Fund SaaS Alternatives</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -198,6 +198,109 @@
     .step h4 {
       margin-bottom: 10px;
       color: #fff;
+    }
+    
+    /* GRANTS */
+    .grants-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      padding: 60px;
+      border-radius: 12px;
+      margin-top: 50px;
+      border: 2px solid #ff1493;
+    }
+    
+    .grants-section h3 {
+      margin-bottom: 20px;
+    }
+    
+    .grants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .grant-tier {
+      background: #0a0a0a;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    
+    .grant-tier.priority {
+      border-color: #ff1493;
+      background: rgba(255, 20, 147, 0.05);
+    }
+    
+    .grant-amount {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+    
+    .grant-tier h4 {
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+    
+    .grant-tier ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .grant-tier li {
+      padding: 5px 0;
+      color: #aaa;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .grant-tier li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #ff1493;
+    }
+    
+    /* TWO SIDES */
+    .two-sides {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .side {
+      background: #0a0a0a;
+      padding: 40px;
+      border-radius: 12px;
+      border: 1px solid #333;
+    }
+    
+    .side h3 {
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+    
+    .side ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    
+    .side li {
+      padding: 8px 0;
+      color: #aaa;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .side li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #ff1493;
     }
     
     /* ECONOMICS */
@@ -398,6 +501,10 @@
       .economics {
         grid-template-columns: 1fr;
       }
+      
+      .two-sides {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -406,6 +513,7 @@
     <div class="logo">🦡 DODO</div>
     <nav>
       <a href="#why">Why DODO</a>
+      <a href="#grants">Grants</a>
       <a href="#how">How It Works</a>
       <a href="#economics">Economics</a>
       <a href="#roadmap">Roadmap</a>
@@ -415,15 +523,15 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>Launch SaaS Alternatives in 24 Hours</h1>
-      <p>DODO is where creators build reimagined software. No deployment. No infrastructure. Just build, launch, and earn 90% of revenue.</p>
+      <h1>Build & Fund SaaS Alternatives</h1>
+      <p>DODO provides infrastructure + grants. Creators build products in 24 hours, keep 100% ownership, get $200-500k to scale.</p>
       
       <div class="cta-buttons">
-        <button class="btn btn-primary">Join as Creator</button>
-        <button class="btn btn-secondary">Explore Templates</button>
+        <button class="btn btn-primary">Apply for Grant</button>
+        <button class="btn btn-secondary">Explore Products</button>
       </div>
       
-      <p class="hero-subtext">Early access. Free infrastructure for first 10 creators. Launch your alternative SaaS today.</p>
+      <p class="hero-subtext">$3M in grants available for ex-Big-Tech teams. Zero dilution. Zero deployment headaches.</p>
     </div>
   </section>
 
@@ -431,92 +539,189 @@
   <section id="why">
     <div class="container">
       <h2>SaaS is Broken</h2>
-      <p>You know this. $3,000/month for Salesforce. $300/month for email. $200 for analytics. $150 for forms. And none of them talk to each other.</p>
+      <p>You know this. $3,000/month for Salesforce. $300/month for email. And none of them talk to each other.</p>
       
       <div class="problem-grid">
         <div class="problem-card">
           <h4>1. Too Expensive</h4>
-          <p>SMBs pay $1000+/month for tools they half-use. Because switching is hard and leaving is expensive.</p>
+          <p>SMBs pay $1000+/month for tools they half-use. Switching is impossible.</p>
         </div>
         
         <div class="problem-card">
-          <h4>2. Vendor Lock-In</h4>
-          <p>Your data lives in Salesforce's servers. Export? Good luck. Your customers own you.</p>
+          <h4>2. Built Wrong</h4>
+          <p>You left Big Tech because you knew they got it wrong. You could build it better.</p>
         </div>
         
         <div class="problem-card">
-          <h4>3. You Know Better</h4>
-          <p>You spent 10 years building at Salesforce. You know exactly what the product is missing. Why not build it?</p>
+          <h4>3. Hard to Launch</h4>
+          <p>Building requires: infrastructure, payments, ops, hiring, scaling. It's a slog.</p>
         </div>
       </div>
       
       <p style="margin-top: 40px; text-align: center; color: #ff1493; font-size: 1.3em;">
-        <strong>The answer: Because building is hard.</strong>
+        <strong>The answer: DODO removes that friction.</strong>
       </p>
     </div>
   </section>
 
-  <!-- THE SOLUTION -->
+  <!-- GRANTS -->
+  <section id="grants">
+    <div class="container">
+      <h2>Creator Grants</h2>
+      <p>DODO is investing $3M to fund the next generation of SaaS alternatives. Get $200-500k. Build for 18 months. Own 100% of your product.</p>
+      
+      <div class="grants-section">
+        <h3>Who Gets Funded?</h3>
+        
+        <div class="grants-grid">
+          <div class="grant-tier priority">
+            <div class="grant-amount">$400-500k</div>
+            <h4>Priority Tier</h4>
+            <ul>
+              <li>Ex-Big-Tech team (Salesforce, HubSpot, Stripe)</li>
+              <li>3-5 people with domain expertise</li>
+              <li>Clear product vision (CRM, email, analytics)</li>
+              <li>Known credibility in category</li>
+            </ul>
+          </div>
+          
+          <div class="grant-tier">
+            <div class="grant-amount">$250-350k</div>
+            <h4>Strong Tier</h4>
+            <ul>
+              <li>Ex-SaaS (other companies)</li>
+              <li>2-3 people with relevant experience</li>
+              <li>Clear vision, less marquee background</li>
+              <li>Ready to commit 18+ months</li>
+            </ul>
+          </div>
+          
+          <div class="grant-tier">
+            <div class="grant-amount">$100-200k</div>
+            <h4>Promising Tier</h4>
+            <ul>
+              <li>Indie hackers with track record</li>
+              <li>Clear vision for specific vertical</li>
+              <li>Community reputation (indie hacker circles)</li>
+              <li>Proven execution ability</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p style="margin-top: 40px; text-align: center; color: #aaa;">
+          <strong>What you get with grant:</strong> Salary for team + 18 months runway. DODO handles infrastructure, scaling, ops. You focus on product. 
+          <br><strong>By month 18:</strong> Self-sufficient from 90% revenue share. Grant period ends. Keep building.
+        </p>
+        
+        <div style="text-align: center; margin-top: 40px;">
+          <button class="btn btn-primary">Apply for Grant</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
   <section id="how">
     <div class="container">
-      <h2>DODO Solves That</h2>
-      <p>We handle infrastructure. You focus on product. Create a better alternative in 24 hours. No fundraising. No deployment. No headaches.</p>
+      <h2>How It Works</h2>
+      <p>DODO handles infrastructure. You focus on product. Create better alternatives in 24 hours.</p>
       
       <div class="solution">
-        <h3>How It Works</h3>
+        <h3>The 4-Step Process</h3>
         
         <div class="how-it-works">
           <div class="step">
             <div class="step-number">1</div>
-            <h4>Choose a Template</h4>
-            <p>CRM. Email. Analytics. Forms. Landing pages. Automations. Pick what you want to build.</p>
+            <h4>Get Funded</h4>
+            <p>Apply for grant ($200-500k). Zero dilution. Own 100% of your product.</p>
           </div>
           
           <div class="step">
             <div class="step-number">2</div>
-            <h4>Customize in 24 Hours</h4>
-            <p>Add your vision. Custom features, UI, integrations. Our team builds it <24h or it's free.</p>
+            <h4>Pick Template</h4>
+            <p>CRM. Email. Analytics. Forms. Choose what you want to build.</p>
           </div>
           
           <div class="step">
             <div class="step-number">3</div>
-            <h4>Launch & Get Paid</h4>
-            <p>Users buy tokens to use your product. You earn 90% of revenue. Monthly settlements, automatic.</p>
+            <h4>Launch in 24h</h4>
+            <p>Add your vision. Custom features. We handle infrastructure + deployment.</p>
           </div>
           
           <div class="step">
             <div class="step-number">4</div>
-            <h4>Grow Your Product</h4>
-            <p>Update, iterate, add features. DODO handles compute, storage, AI. You own the product vision.</p>
+            <h4>Earn 90%</h4>
+            <p>Users buy tokens. You get 90% of revenue. Monthly settlements. Keep building.</p>
           </div>
         </div>
       </div>
-      
-      <h3 style="margin-top: 60px; margin-bottom: 30px;">Who Should Build on DODO</h3>
+
+      <h3 style="margin-top: 60px; margin-bottom: 30px;">Creator Types</h3>
       
       <div class="creator-types">
         <div class="creator-card">
-          <h4>Individual Creators</h4>
-          <p>Indie hackers and side-project builders who want to launch something real without managing infrastructure.</p>
+          <h4>Ex-Big-Tech Teams</h4>
+          <p>5-person team from Salesforce building the CRM you always wanted.</p>
           <div class="creator-examples">
-            Example: Solo engineer builds analytics alternative. Year 1 revenue: $100-500k.
+            Year 1 revenue: $2-5M (split 5 ways = $400k-$1M per person)
           </div>
         </div>
         
         <div class="creator-card">
-          <h4>Creator Teams</h4>
-          <p>Ex-Big-Tech engineers who left to build the product they always wanted to build.</p>
+          <h4>Individual Builders</h4>
+          <p>Solo indie hacker launching something you believe in.</p>
           <div class="creator-examples">
-            Example: Ex-Salesforce CRM team. Year 1 revenue: $2-5M. They split 90%.
+            Year 1 revenue: $100-500k (all yours)
           </div>
         </div>
         
         <div class="creator-card">
-          <h4>Agencies & Studios</h4>
-          <p>Build custom software for clients on DODO infrastructure. Recurring revenue model.</p>
+          <h4>Agencies</h4>
+          <p>Custom software builders launching products for their clients.</p>
           <div class="creator-examples">
-            Example: Agency builds email alternative for their clients. 20+ customers = $1M revenue.
+            Year 1 revenue: $1-3M (recurring from clients)
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO SIDES -->
+  <section>
+    <div class="container">
+      <h2>Two Sides, One Platform</h2>
+      
+      <div class="two-sides">
+        <div class="side">
+          <h3>For Creators</h3>
+          <p>Launch your vision in 24 hours. Keep 90% of revenue. Own your product. Get funded to scale.</p>
+          
+          <ul>
+            <li>$200-500k grant (zero dilution)</li>
+            <li>No deployment headaches</li>
+            <li>18-month runway to profitability</li>
+            <li>Own 100% of your product</li>
+            <li>Keep 90% of user revenue</li>
+            <li>Support from DODO community</li>
+          </ul>
+          
+          <button class="btn btn-primary" style="margin-top: 20px; width: 100%;">Apply for Grant</button>
+        </div>
+        
+        <div class="side">
+          <h3>For Users</h3>
+          <p>Get alternatives to expensive SaaS. 10x cheaper. Built by category experts. No lock-in.</p>
+          
+          <ul>
+            <li>Email from ex-HubSpot team</li>
+            <li>CRM from ex-Salesforce team</li>
+            <li>Analytics from ex-Mixpanel team</li>
+            <li>10x cheaper than incumbents</li>
+            <li>Own your data</li>
+            <li>Leave anytime (no lock-in)</li>
+          </ul>
+          
+          <button class="btn btn-secondary" style="margin-top: 20px; width: 100%;">Explore Products</button>
         </div>
       </div>
     </div>
@@ -544,10 +749,10 @@
         </div>
         
         <div class="econ-card highlight">
-          <div class="econ-title">You Earn (As Creator)</div>
+          <div class="econ-title">Creator Earns (90%)</div>
           
           <div class="econ-row">
-            <span class="econ-label">Your Product (90%)</span>
+            <span class="econ-label">Product Revenue</span>
             <span class="econ-value">$700</span>
           </div>
           
@@ -572,28 +777,18 @@
         </div>
         
         <div class="econ-row">
-          <span class="econ-label">Infrastructure Cost</span>
-          <span class="econ-value">$120</span>
+          <span class="econ-label">Infrastructure Margin (60%)</span>
+          <span class="econ-value">$180</span>
         </div>
         
         <div class="econ-row">
-          <span class="econ-label">Infrastructure Charge</span>
-          <span class="econ-value">$300</span>
-        </div>
-        
-        <div class="econ-row">
-          <span class="econ-label"><strong>Infrastructure Margin (60%)</strong></span>
-          <span class="econ-value"><strong>$180</strong></span>
-        </div>
-        
-        <div class="econ-row">
-          <span class="econ-label"><strong>Total DODO Margin</strong></span>
+          <span class="econ-label"><strong>Total Margin</strong></span>
           <span class="econ-value"><strong>$280 (28%)</strong></span>
         </div>
       </div>
       
       <p style="margin-top: 40px; color: #aaa; text-align: center;">
-        <strong>The math is simple:</strong> You focus on building. We focus on infrastructure. Users pay once. Everyone wins.
+        <strong>The grants aren't an expense—they're an investment.</strong> We fund teams so they reach profitability. Then we earn 10% + margin on their success forever.
       </p>
     </div>
   </section>
@@ -602,11 +797,11 @@
   <section>
     <div class="container">
       <h2>Proof of Concept</h2>
-      <p>We're not just theorizing. We're proving it works. First product launching on DODO: On-chain Digital Asset Manager (reimagined Bynder).</p>
+      <p>We're not just theorizing. We're proving it works. First product launching on DODO: On-chain Digital Asset Manager.</p>
       
       <div class="poc-card">
         <h3>🔗 On-Chain DAM by Chris Hall</h3>
-        <p>Proof of ownership for digital assets. Local-first storage. Blockchain integration. Built on DODO in 4 weeks.</p>
+        <p>Proof of ownership for digital assets. Local-first storage. Blockchain integration. Built on DODO templates.</p>
         
         <div class="poc-details">
           <div class="poc-detail">
@@ -626,13 +821,13 @@
           
           <div class="poc-detail">
             <strong>Why It Matters</strong>
-            Shows that DODO works. Founder using own platform.
+            Founder using own platform. Shows it works.
           </div>
         </div>
       </div>
       
       <p style="margin-top: 40px; text-align: center; color: #ff1493;">
-        <strong>Next products launching:</strong> Salesforce alternative (ex-CRM team), HubSpot alternative (ex-marketing team), Mixpanel alternative (ex-analytics team). New launch every 2-4 weeks.
+        <strong>Next launches:</strong> Ex-Salesforce CRM (grant funded), Ex-HubSpot Email (grant funded), Ex-Mixpanel Analytics (grant funded). New product every 2-4 weeks.
       </p>
     </div>
   </section>
@@ -645,46 +840,42 @@
       <div class="roadmap">
         <div class="roadmap-timeline">
           <div class="roadmap-phase">
-            <h4>Month 1-3: Foundation</h4>
+            <h4>Week 1: Launch</h4>
             <ul>
-              <li>Launch DODO platform</li>
-              <li>Release template library (10+ SaaS clones)</li>
-              <li>On-chain DAM goes beta</li>
-              <li>Recruit first 5-10 creators</li>
-              <li>Target: 500+ users, $250k token volume</li>
+              <li>DODO website live</li>
+              <li>Grant applications open</li>
+              <li>Chris Hall DAM announced</li>
+              <li>Target: 1,000 visitors</li>
             </ul>
           </div>
           
           <div class="roadmap-phase">
-            <h4>Month 3-6: Creators</h4>
+            <h4>Month 1-3: Grants</h4>
             <ul>
-              <li>New product launch every 2 weeks</li>
-              <li>CRM alternative (ex-Salesforce team)</li>
-              <li>Email alternative (ex-HubSpot team)</li>
-              <li>Analytics alternative (ex-Mixpanel team)</li>
-              <li>Target: 2,000+ users, $5M token volume</li>
+              <li>Close applications</li>
+              <li>Select 5-10 teams</li>
+              <li>First 2-3 teams funded</li>
+              <li>Target: 5-10 teams building</li>
+            </ul>
+          </div>
+          
+          <div class="roadmap-phase">
+            <h4>Month 3-6: Launches</h4>
+            <ul>
+              <li>Your DAM on ProductHunt</li>
+              <li>First funded team's product</li>
+              <li>New launch every 2-4 weeks</li>
+              <li>Target: 2,000 users, $5M volume</li>
             </ul>
           </div>
           
           <div class="roadmap-phase">
             <h4>Month 6-12: Ecosystem</h4>
             <ul>
-              <li>15+ teams on platform</li>
-              <li>20+ products launching</li>
-              <li>Governance token voting</li>
-              <li>Secondary market for tokens</li>
-              <li>Target: 10k+ users, $50M+ token volume</li>
-            </ul>
-          </div>
-          
-          <div class="roadmap-phase">
-            <h4>Year 2+: Platform</h4>
-            <ul>
-              <li>50+ creator teams</li>
-              <li>50+ alternative products</li>
-              <li>100k+ users</li>
-              <li>Series A raise ($3-5M)</li>
-              <li>Path to $200M+ valuation</li>
+              <li>10-15 teams funded & launching</li>
+              <li>20+ products live</li>
+              <li>Teams becoming self-sufficient</li>
+              <li>Target: 10k users, $50M volume</li>
             </ul>
           </div>
         </div>
@@ -698,33 +889,33 @@
       <h2>Questions?</h2>
       
       <div class="faq-item">
-        <strong>Who owns the product I build on DODO?</strong>
-        <p>You do. 100%. You can take it anywhere. DODO is just infrastructure. You own the IP, the code, the customers.</p>
+        <strong>How much grant do I get?</strong>
+        <p>$200-500k depending on tier. Covers team salary + 18 months runway. No strings attached. You own 100% of your product.</p>
       </div>
       
       <div class="faq-item">
-        <strong>What if DODO shuts down?</strong>
-        <p>You still own your product. We'll help you migrate. But we're not shutting down—DODO is the future of SaaS creation.</p>
+        <strong>Do I keep my product if DODO fails?</strong>
+        <p>Yes. 100%. DODO is just infrastructure. Your product is yours to take anywhere.</p>
       </div>
       
       <div class="faq-item">
-        <strong>Can I cash out my tokens?</strong>
-        <p>Yes. Tokens can be held (governance rights), sold on secondary market, or converted to USD through our fiat on-ramp.</p>
+        <strong>How do I make money?</strong>
+        <p>Users buy tokens to access your product. You keep 90%. They're settled monthly, automatically on-chain.</p>
       </div>
       
       <div class="faq-item">
-        <strong>How does the 90/10 split work?</strong>
-        <p>When a user spends $1000 on tokens: $900 goes to you (product), $100 goes to DODO (platform). Monthly settlement, automatic.</p>
+        <strong>What if I don't reach profitability by Month 18?</strong>
+        <p>That's okay. Grant period ends, but you can stay on DODO. If generating revenue, keep earning 90%. If not, you own your product—take it elsewhere.</p>
       </div>
       
       <div class="faq-item">
-        <strong>Do I need to have a team?</strong>
-        <p>No. Solo builders welcome. But teams scale faster. Both work on DODO.</p>
+        <strong>Do I need to be ex-Big-Tech?</strong>
+        <p>Not required, but it helps. Indie hackers welcome. We fund based on: credibility, product vision, commitment to execute.</p>
       </div>
       
       <div class="faq-item">
-        <strong>What's the catch?</strong>
-        <p>No catch. We make 10% + infrastructure margin. You make 90% of product revenue. Aligned incentives. That's it.</p>
+        <strong>When do applications close?</strong>
+        <p>Rolling applications. First 10 teams get priority for grants. Apply now: [Apply for Grant]</p>
       </div>
     </div>
   </section>
@@ -733,15 +924,15 @@
   <section style="padding: 60px 0; text-align: center; background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);">
     <div class="container">
       <h2>Ready to Build?</h2>
-      <p style="margin-bottom: 30px;">Join the wave of creators building SaaS alternatives.</p>
+      <p style="margin-bottom: 30px;">Join the wave of funded creators building SaaS alternatives.</p>
       
       <div class="cta-buttons">
-        <button class="btn btn-primary">Become a Creator</button>
-        <button class="btn btn-secondary">Explore Templates</button>
+        <button class="btn btn-primary">Apply for Grant</button>
+        <button class="btn btn-secondary">Explore Products</button>
       </div>
       
       <p style="margin-top: 30px; color: #666; font-size: 0.9em;">
-        First 10 creators get free infrastructure for Year 1. Limited spots available.
+        $3M available in grants. First 10 teams funded. <strong>Applications close when budget is allocated.</strong>
       </p>
     </div>
   </section>
@@ -749,8 +940,8 @@
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p><strong>DODO</strong> — The platform for creators to launch SaaS alternatives.</p>
-      <p style="margin-top: 20px; color: #444;">© 2026 DODO. Early access. Changing SaaS forever.</p>
+      <p><strong>DODO</strong> — Build & fund the next generation of SaaS.</p>
+      <p style="margin-top: 20px; color: #444;">© 2026 DODO. Where creators launch alternatives.</p>
     </div>
   </footer>
 </body>
