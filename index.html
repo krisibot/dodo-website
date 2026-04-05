@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DODO — Launch SaaS Alternatives in 24 Hours</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 100;
+    }
+    
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #ff1493;
+    }
+    
+    nav a {
+      margin-left: 30px;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: #fff;
+    }
+    
+    /* HERO */
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 1.3em;
+      color: #aaa;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    
+    .btn {
+      padding: 14px 40px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+      color: #000;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #ff1493;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 20, 147, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .hero-subtext {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 20px;
+    }
+    
+    /* SECTION */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    
+    section h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    
+    section h3 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #ff1493;
+    }
+    
+    section p {
+      font-size: 1.1em;
+      color: #bbb;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    /* THE PROBLEM */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .problem-card {
+      background: #0a0a0a;
+      padding: 30px;
+      border-left: 3px solid #ff1493;
+      border-radius: 8px;
+    }
+    
+    .problem-card h4 {
+      margin-bottom: 10px;
+      color: #ff1493;
+    }
+    
+    /* THE SOLUTION */
+    .solution {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      padding: 60px;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+    
+    .how-it-works {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .step {
+      background: #0a0a0a;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    
+    .step-number {
+      font-size: 2em;
+      font-weight: bold;
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+    
+    .step h4 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    
+    /* ECONOMICS */
+    .economics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .econ-card {
+      background: #0a0a0a;
+      padding: 40px;
+      border-radius: 8px;
+      border: 2px solid #333;
+    }
+    
+    .econ-card.highlight {
+      border-color: #ff1493;
+      background: rgba(255, 20, 147, 0.05);
+    }
+    
+    .econ-title {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      color: #ff1493;
+    }
+    
+    .econ-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #333;
+    }
+    
+    .econ-row:last-child {
+      border-bottom: none;
+    }
+    
+    .econ-label {
+      color: #aaa;
+    }
+    
+    .econ-value {
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    /* CREATORS */
+    .creator-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .creator-card {
+      background: #0a0a0a;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    
+    .creator-card h4 {
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+    
+    .creator-examples {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #333;
+    }
+    
+    /* PROOF OF CONCEPT */
+    .poc-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      padding: 40px;
+      border-radius: 12px;
+      border: 2px solid #ff1493;
+      margin-top: 40px;
+    }
+    
+    .poc-card h3 {
+      margin-bottom: 15px;
+      color: #ff1493;
+    }
+    
+    .poc-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .poc-detail {
+      color: #aaa;
+    }
+    
+    .poc-detail strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    /* ROADMAP */
+    .roadmap {
+      margin-top: 40px;
+    }
+    
+    .roadmap-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .roadmap-phase {
+      background: #0a0a0a;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid #ff1493;
+    }
+    
+    .roadmap-phase h4 {
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+    
+    .roadmap-phase ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .roadmap-phase li {
+      padding: 5px 0;
+      color: #aaa;
+    }
+    
+    .roadmap-phase li:before {
+      content: "▸ ";
+      color: #ff1493;
+      margin-right: 8px;
+    }
+    
+    /* FAQ */
+    .faq-item {
+      background: #0a0a0a;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border-left: 3px solid #ff1493;
+    }
+    
+    .faq-item strong {
+      color: #ff1493;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .faq-item p {
+      margin: 0;
+      color: #aaa;
+    }
+    
+    /* FOOTER */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid #333;
+      text-align: center;
+      color: #666;
+    }
+    
+    footer p {
+      margin: 10px 0;
+    }
+    
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+      
+      .hero p {
+        font-size: 1.1em;
+      }
+      
+      section h2 {
+        font-size: 1.8em;
+      }
+      
+      nav a {
+        margin-left: 15px;
+        font-size: 0.9em;
+      }
+      
+      .economics {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🦡 DODO</div>
+    <nav>
+      <a href="#why">Why DODO</a>
+      <a href="#how">How It Works</a>
+      <a href="#economics">Economics</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Launch SaaS Alternatives in 24 Hours</h1>
+      <p>DODO is where creators build reimagined software. No deployment. No infrastructure. Just build, launch, and earn 90% of revenue.</p>
+      
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Join as Creator</button>
+        <button class="btn btn-secondary">Explore Templates</button>
+      </div>
+      
+      <p class="hero-subtext">Early access. Free infrastructure for first 10 creators. Launch your alternative SaaS today.</p>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section id="why">
+    <div class="container">
+      <h2>SaaS is Broken</h2>
+      <p>You know this. $3,000/month for Salesforce. $300/month for email. $200 for analytics. $150 for forms. And none of them talk to each other.</p>
+      
+      <div class="problem-grid">
+        <div class="problem-card">
+          <h4>1. Too Expensive</h4>
+          <p>SMBs pay $1000+/month for tools they half-use. Because switching is hard and leaving is expensive.</p>
+        </div>
+        
+        <div class="problem-card">
+          <h4>2. Vendor Lock-In</h4>
+          <p>Your data lives in Salesforce's servers. Export? Good luck. Your customers own you.</p>
+        </div>
+        
+        <div class="problem-card">
+          <h4>3. You Know Better</h4>
+          <p>You spent 10 years building at Salesforce. You know exactly what the product is missing. Why not build it?</p>
+        </div>
+      </div>
+      
+      <p style="margin-top: 40px; text-align: center; color: #ff1493; font-size: 1.3em;">
+        <strong>The answer: Because building is hard.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section id="how">
+    <div class="container">
+      <h2>DODO Solves That</h2>
+      <p>We handle infrastructure. You focus on product. Create a better alternative in 24 hours. No fundraising. No deployment. No headaches.</p>
+      
+      <div class="solution">
+        <h3>How It Works</h3>
+        
+        <div class="how-it-works">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h4>Choose a Template</h4>
+            <p>CRM. Email. Analytics. Forms. Landing pages. Automations. Pick what you want to build.</p>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <h4>Customize in 24 Hours</h4>
+            <p>Add your vision. Custom features, UI, integrations. Our team builds it <24h or it's free.</p>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <h4>Launch & Get Paid</h4>
+            <p>Users buy tokens to use your product. You earn 90% of revenue. Monthly settlements, automatic.</p>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">4</div>
+            <h4>Grow Your Product</h4>
+            <p>Update, iterate, add features. DODO handles compute, storage, AI. You own the product vision.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 60px; margin-bottom: 30px;">Who Should Build on DODO</h3>
+      
+      <div class="creator-types">
+        <div class="creator-card">
+          <h4>Individual Creators</h4>
+          <p>Indie hackers and side-project builders who want to launch something real without managing infrastructure.</p>
+          <div class="creator-examples">
+            Example: Solo engineer builds analytics alternative. Year 1 revenue: $100-500k.
+          </div>
+        </div>
+        
+        <div class="creator-card">
+          <h4>Creator Teams</h4>
+          <p>Ex-Big-Tech engineers who left to build the product they always wanted to build.</p>
+          <div class="creator-examples">
+            Example: Ex-Salesforce CRM team. Year 1 revenue: $2-5M. They split 90%.
+          </div>
+        </div>
+        
+        <div class="creator-card">
+          <h4>Agencies & Studios</h4>
+          <p>Build custom software for clients on DODO infrastructure. Recurring revenue model.</p>
+          <div class="creator-examples">
+            Example: Agency builds email alternative for their clients. 20+ customers = $1M revenue.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECONOMICS -->
+  <section id="economics">
+    <div class="container">
+      <h2>The Economics</h2>
+      <p>Crystal clear. No surprises. No hidden fees.</p>
+      
+      <div class="economics">
+        <div class="econ-card">
+          <div class="econ-title">User Spends $1000/year</div>
+          
+          <div class="econ-row">
+            <span class="econ-label">Product License</span>
+            <span class="econ-value">$700</span>
+          </div>
+          
+          <div class="econ-row">
+            <span class="econ-label">Infrastructure</span>
+            <span class="econ-value">$300</span>
+          </div>
+        </div>
+        
+        <div class="econ-card highlight">
+          <div class="econ-title">You Earn (As Creator)</div>
+          
+          <div class="econ-row">
+            <span class="econ-label">Your Product (90%)</span>
+            <span class="econ-value">$700</span>
+          </div>
+          
+          <div class="econ-row">
+            <span class="econ-label">You Pay for Infra</span>
+            <span class="econ-value">$0</span>
+          </div>
+          
+          <div class="econ-row">
+            <span class="econ-label"><strong>Net to You</strong></span>
+            <span class="econ-value"><strong>$700</strong></span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="econ-card" style="margin-top: 30px;">
+        <div class="econ-title">DODO Earns</div>
+        
+        <div class="econ-row">
+          <span class="econ-label">Platform Fee (10%)</span>
+          <span class="econ-value">$100</span>
+        </div>
+        
+        <div class="econ-row">
+          <span class="econ-label">Infrastructure Cost</span>
+          <span class="econ-value">$120</span>
+        </div>
+        
+        <div class="econ-row">
+          <span class="econ-label">Infrastructure Charge</span>
+          <span class="econ-value">$300</span>
+        </div>
+        
+        <div class="econ-row">
+          <span class="econ-label"><strong>Infrastructure Margin (60%)</strong></span>
+          <span class="econ-value"><strong>$180</strong></span>
+        </div>
+        
+        <div class="econ-row">
+          <span class="econ-label"><strong>Total DODO Margin</strong></span>
+          <span class="econ-value"><strong>$280 (28%)</strong></span>
+        </div>
+      </div>
+      
+      <p style="margin-top: 40px; color: #aaa; text-align: center;">
+        <strong>The math is simple:</strong> You focus on building. We focus on infrastructure. Users pay once. Everyone wins.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROOF OF CONCEPT -->
+  <section>
+    <div class="container">
+      <h2>Proof of Concept</h2>
+      <p>We're not just theorizing. We're proving it works. First product launching on DODO: On-chain Digital Asset Manager (reimagined Bynder).</p>
+      
+      <div class="poc-card">
+        <h3>🔗 On-Chain DAM by Chris Hall</h3>
+        <p>Proof of ownership for digital assets. Local-first storage. Blockchain integration. Built on DODO in 4 weeks.</p>
+        
+        <div class="poc-details">
+          <div class="poc-detail">
+            <strong>Category</strong>
+            Digital Asset Management
+          </div>
+          
+          <div class="poc-detail">
+            <strong>Status</strong>
+            Beta. Recruiting users.
+          </div>
+          
+          <div class="poc-detail">
+            <strong>Year 1 Target</strong>
+            $100-150k revenue
+          </div>
+          
+          <div class="poc-detail">
+            <strong>Why It Matters</strong>
+            Shows that DODO works. Founder using own platform.
+          </div>
+        </div>
+      </div>
+      
+      <p style="margin-top: 40px; text-align: center; color: #ff1493;">
+        <strong>Next products launching:</strong> Salesforce alternative (ex-CRM team), HubSpot alternative (ex-marketing team), Mixpanel alternative (ex-analytics team). New launch every 2-4 weeks.
+      </p>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap">
+    <div class="container">
+      <h2>Roadmap</h2>
+      
+      <div class="roadmap">
+        <div class="roadmap-timeline">
+          <div class="roadmap-phase">
+            <h4>Month 1-3: Foundation</h4>
+            <ul>
+              <li>Launch DODO platform</li>
+              <li>Release template library (10+ SaaS clones)</li>
+              <li>On-chain DAM goes beta</li>
+              <li>Recruit first 5-10 creators</li>
+              <li>Target: 500+ users, $250k token volume</li>
+            </ul>
+          </div>
+          
+          <div class="roadmap-phase">
+            <h4>Month 3-6: Creators</h4>
+            <ul>
+              <li>New product launch every 2 weeks</li>
+              <li>CRM alternative (ex-Salesforce team)</li>
+              <li>Email alternative (ex-HubSpot team)</li>
+              <li>Analytics alternative (ex-Mixpanel team)</li>
+              <li>Target: 2,000+ users, $5M token volume</li>
+            </ul>
+          </div>
+          
+          <div class="roadmap-phase">
+            <h4>Month 6-12: Ecosystem</h4>
+            <ul>
+              <li>15+ teams on platform</li>
+              <li>20+ products launching</li>
+              <li>Governance token voting</li>
+              <li>Secondary market for tokens</li>
+              <li>Target: 10k+ users, $50M+ token volume</li>
+            </ul>
+          </div>
+          
+          <div class="roadmap-phase">
+            <h4>Year 2+: Platform</h4>
+            <ul>
+              <li>50+ creator teams</li>
+              <li>50+ alternative products</li>
+              <li>100k+ users</li>
+              <li>Series A raise ($3-5M)</li>
+              <li>Path to $200M+ valuation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <h2>Questions?</h2>
+      
+      <div class="faq-item">
+        <strong>Who owns the product I build on DODO?</strong>
+        <p>You do. 100%. You can take it anywhere. DODO is just infrastructure. You own the IP, the code, the customers.</p>
+      </div>
+      
+      <div class="faq-item">
+        <strong>What if DODO shuts down?</strong>
+        <p>You still own your product. We'll help you migrate. But we're not shutting down—DODO is the future of SaaS creation.</p>
+      </div>
+      
+      <div class="faq-item">
+        <strong>Can I cash out my tokens?</strong>
+        <p>Yes. Tokens can be held (governance rights), sold on secondary market, or converted to USD through our fiat on-ramp.</p>
+      </div>
+      
+      <div class="faq-item">
+        <strong>How does the 90/10 split work?</strong>
+        <p>When a user spends $1000 on tokens: $900 goes to you (product), $100 goes to DODO (platform). Monthly settlement, automatic.</p>
+      </div>
+      
+      <div class="faq-item">
+        <strong>Do I need to have a team?</strong>
+        <p>No. Solo builders welcome. But teams scale faster. Both work on DODO.</p>
+      </div>
+      
+      <div class="faq-item">
+        <strong>What's the catch?</strong>
+        <p>No catch. We make 10% + infrastructure margin. You make 90% of product revenue. Aligned incentives. That's it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section style="padding: 60px 0; text-align: center; background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);">
+    <div class="container">
+      <h2>Ready to Build?</h2>
+      <p style="margin-bottom: 30px;">Join the wave of creators building SaaS alternatives.</p>
+      
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Become a Creator</button>
+        <button class="btn btn-secondary">Explore Templates</button>
+      </div>
+      
+      <p style="margin-top: 30px; color: #666; font-size: 0.9em;">
+        First 10 creators get free infrastructure for Year 1. Limited spots available.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p><strong>DODO</strong> — The platform for creators to launch SaaS alternatives.</p>
+      <p style="margin-top: 20px; color: #444;">© 2026 DODO. Early access. Changing SaaS forever.</p>
+    </div>
+  </footer>
+</body>
+</html>
