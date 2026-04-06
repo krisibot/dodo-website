@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DODO — Vision, Product, Marketplace</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 100;
+    }
+    
+    .logo { font-size: 1.8em; font-weight: bold; color: #ff1493; }
+    
+    nav a {
+      margin-left: 30px;
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover { color: #fff; }
+    
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 1.3em;
+      color: #aaa;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    
+    .btn {
+      padding: 14px 40px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #ff1493, #ff69b4);
+      color: #000;
+    }
+    
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4); }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #ff1493;
+    }
+    
+    .btn-secondary:hover { background: rgba(255, 20, 147, 0.1); transform: translateY(-2px); }
+    
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    
+    section h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+    
+    section h3 {
+      font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #ff1493;
+    }
+    
+    section p {
+      font-size: 1.1em;
+      color: #bbb;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    
+    .comparison-card {
+      background: #0a0a0a;
+      padding: 40px;
+      border-radius: 12px;
+      border: 2px solid #333;
+    }
+    
+    .comparison-card.local {
+      border-color: #ff1493;
+      background: rgba(255, 20, 147, 0.05);
+    }
+    
+    .comparison-card h4 {
+      color: #ff1493;
+      margin-bottom: 20px;
+      font-size: 1.3em;
+    }
+    
+    .comparison-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .comparison-card li {
+      padding: 8px 0;
+      color: #aaa;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .comparison-card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #ff1493;
+    }
+    
+    .comparison-card.cloud li:before { content: "✗"; }
+    
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid #333;
+      text-align: center;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5em; }
+      .comparison { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🦡 DODO</div>
+    <nav>
+      <a href="#vision">Vision</a>
+      <a href="#product">Product</a>
+      <a href="#marketplace">Marketplace</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Software is Going Extinct</h1>
+      <p>SaaS died. You already know it. The tools replacing it are being built right now. By you.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Start Building</button>
+        <button class="btn btn-secondary">See What's Built</button>
+      </div>
+      <p style="color: #666;">One-time OS. Creator marketplace. Token economy. Own your work.</p>
+    </div>
+  </section>
+
+  <section id="vision">
+    <div class="container">
+      <h2>The Vision: Local-First Post-SaaS</h2>
+      <p>SaaS is dying (growth flat at 10-15%, PE can't justify debt load). What's replacing it: Local-first software. Your data. Your control. No subscription trap.</p>
+
+      <h3 style="margin-top: 60px; text-align: center; color: #ff1493;">Local-First vs. Cloud SaaS: Why Local Wins</h3>
+      
+      <div class="comparison">
+        <div class="comparison-card local">
+          <h4>Local-First (DODO)</h4>
+          <ul>
+            <li><strong>Your data, always.</strong> Stored on your machine or private cloud.</li>
+            <li><strong>Zero vendor lock-in.</strong> Export anytime. Run it offline. Take it anywhere.</li>
+            <li><strong>No surveillance.</strong> No behavior tracking. No upsell intelligence.</li>
+            <li><strong>Works offline.</strong> Internet down? Keep working. Sync later.</li>
+            <li><strong>One-time cost.</strong> €10k base + tokens. No annual bleed.</li>
+            <li><strong>Real privacy.</strong> No data sold. No behavioral harvesting. Just yours.</li>
+          </ul>
+        </div>
+        
+        <div class="comparison-card cloud">
+          <h4>Cloud SaaS (Incumbent)</h4>
+          <ul>
+            <li><strong>Vendor owns your data.</strong> You can't access it. Can't move it.</li>
+            <li><strong>Lock-in is the business model.</strong> Switching costs are intentional.</li>
+            <li><strong>Constant tracking.</strong> Every action monitored. Sold to data brokers.</li>
+            <li><strong>Internet required.</strong> No connectivity = no access. Ever.</li>
+            <li><strong>Endless subscriptions.</strong> €500/mo forever. Price increases yearly.</li>
+            <li><strong>Your data is the product.</strong> They sell it. They monetize you.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="margin-top: 40px; text-align: center; color: #ff1493; font-size: 1.3em;">
+        <strong>The shift is real. Local-first is winning.</strong> This is your moment.
+      </p>
+    </div>
+  </section>
+
+  <section id="product">
+    <div class="container">
+      <h2>The Product: Post-SaaS OS</h2>
+      <p>Replace HubSpot + Shopify + Bynder + CMS + Email + Analytics with one app. Local-first. One-time cost. Tokens for customization. Your data, always.</p>
+      
+      <h3 style="margin-top: 40px;">One-Time + Tokens, Not Subscriptions</h3>
+      <p style="margin-bottom: 40px;">€10k base OS + €50-5k tokens for custom features. No annual hostage economics. Data export anytime.</p>
+      
+      <p style="text-align: center; font-size: 1.2em; color: #aaa; margin-top: 60px;">
+        <strong>Today's SaaS Stack:</strong> HubSpot €500/mo + Shopify €300/mo + Bynder €400/mo + CMS €200/mo = <strong>€18k/year</strong><br>
+        <strong>With DODO:</strong> €10k one-time + tokens as needed = <strong>One-time investment</strong>
+      </p>
+    </div>
+  </section>
+
+  <section id="marketplace">
+    <div class="container">
+      <h2>The Creator Marketplace</h2>
+      <p>Ex-SaaS engineers. You know what products should be. Now build them. Earn real money. Own your work forever.</p>
+      
+      <h3 style="margin-top: 40px;">Build a Product, Earn €50k–500k/month</h3>
+      <p style="margin-bottom: 40px; color: #aaa;">Pick your category. Build your vision. We handle infrastructure. You keep 90% of revenue. Monthly payouts.</p>
+      
+      <p style="margin-top: 40px; text-align: center; color: #aaa;">
+        <strong>Optional grants available (€200-500k, zero dilution)</strong> for teams that need runway.<br>
+        Not a requirement. Nice to have.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>DODO</strong> — Build & fund the next generation of software.</p>
+      <p style="margin-top: 20px; color: #444;">© 2026 DODO. Post-SaaS OS.</p>
+    </div>
+  </footer>
+</body>
+</html>
